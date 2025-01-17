@@ -106,26 +106,61 @@
 
         // eg : -
 
-        class A {
-            method(){
-                console.log("first");
+        // class A {
+        //     method(){
+        //         console.log("first");
                 
-            }
-        }
-        class B extends A{
-            methodA(){
-                console.log("second");
+        //     }
+        // }
+        // class B extends A{
+        //     methodA(){
+        //         console.log("second");
                 
-            }
-            methodA(){
-                console.log("third");
+        //     }
+        //     methodA(){
+        //         console.log("third");
                 
-            }
-        }
+        //     }
+        // }
         
-        const obj = new B();
-        obj.methodA()
+        // const obj = new B();
+        // obj.methodA()
 
         // to pending sellf study 
         // 3 and 4 methods 
     
+
+        // Exception Handlng ------ >
+
+        // . Exceotion : run time error
+        // .try-catch block 
+
+        // syntac:-
+            // try{
+            //     statements -> whose statements 
+            // }
+                // catch{
+
+                // }
+                //finaly{
+                // }
+
+        // exp = "10/2*3"
+        // try{
+        //     result =eval(exp)
+        //     console.log(result);
+            
+        // }
+        // catch{
+        //     console.log("incorrect Expression");
+            
+        // }
+        // finally{
+        //     console.log("execution ended");
+            
+        // }
+        // n1 =10;
+        // n2 =20;
+        // sum = n1+n2;
+        // console.log(sum);
+        

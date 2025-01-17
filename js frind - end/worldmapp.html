@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="text-center justify-content-center d-flex align-items-center"style="background-image: url(https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?cs=srgb&dl=pexels-pixabay-158827.jpg&fm=jpg); background-repeat: no repeat; background-size: cover; height: 100vh;">
+        <div class="container-fluid">
+            <div class = "row p-4">
+            <div class="col-md-4"></div>
+            <div class ="col-md-4">
+            <div class=" border shadow rounded p-4">
+              <h1>Know About Countries</h1>
+              <div class ="d-flex mt-3">
+              <input id="countryName" type ="text"placeholder ="search country"class= "form control">
+              <button onclick="search()" class="btn btn-success ms-3">search</button>
+            </div>
+          </div>
+        </div>
+            
+        </div>
+        </div> 
+    </body>
+    <script>
+        const search = async() =>{
+            console.log(countryName.value);
+            const response = await fetch(`https://restcountries.com/v3.1/name/${countryName.value}?fullText=true`);
+
+            console.log(response);
+            response.json().then((data)=>{
+                console.log(data);
+            })
+            
+            let common = data[0].name.common
+            console.log(common)
+
+            let border = data[0].borders 
+            console.log(border)
+
+            let area = data[0].area
+            console.log(area)
+
+            let googlemap = data[0].googlemap
+            console.log(googlemap)
+
+            for(var carr in data[0].currencies){
+                var currencies = data[0].currencies[curr].name
+                var symbol = data[0].currencies[curr].symbol
+            }
+            console.log(currenciesname, symbol)
+        }
+
+        result.innerHTML = `
+        <div class ="container-fluid mt-5">
+                <div class ="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                          <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV8zMF9pbGx1c3RyYXRpb25fb2ZfaW5kaWFuX3RyaWNvbG9yX2ZsYWdfYmFja2dyb184MDU3ZTRiNi03MTdiLTQ1ZWEtOTliMi1iYmE0NWE3OGI4NGFfMS5qcGc.jpg" class="img-fluid rounded-start" alt="flag">
+                    <h5 class ="card-title mt-3">Rebublic of India</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-8 p-3">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                          </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-1" ></div>
+            </div>
+        `
+
+
+    </script>
+    </html>
